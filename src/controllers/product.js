@@ -7,7 +7,7 @@ const { API_URI } = process.env;
 
 const productSchema = joi.object({
   name: joi.string().required(),
-  price: joi.number().required(),
+  price: joi.number().strict().integer().required(),
 });
 
 export const getAll = async (req, res) => {
